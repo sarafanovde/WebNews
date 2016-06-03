@@ -1,0 +1,5 @@
+      [paste.app_factory]
+      main = webnews:main
+      [console_scripts]
+      initialize_WebNews_db = webnews.scripts.initializedb:main
+      
