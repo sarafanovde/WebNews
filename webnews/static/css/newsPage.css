@@ -1,0 +1,55 @@
+.info
+{
+    width:280px;
+    float:right;
+    padding-top:10px;
+    margin-right: 170px;
+}
+.topic
+{
+    overflow: hidden;
+    margin-bottom: 10px;
+    font: bold 30px 'Arimo';
+    color: #6666ff;
+}
+.row
+{
+    overflow: hidden;
+    margin-bottom: 9px;
+    font: bold 20px/20px 'Arimo';
+}
+.value
+{
+    overflow: hidden;
+    margin-bottom: 9px;
+    font: bold 14px 'Arimo';
+}
+.data
+{
+    margin: 10px 2px;
+}
+.image
+{
+    position:relative;
+    width:480px;
+    height: 215px;
+    float:left;
+    margin: 10px 2px;
+
+}
+.image img
+{
+    display: block;
+    height: 215px;
+    width: 470px;
+    border: 1px solid;
+    border-color: #000;
+}
+
+
+form
+{
+    position: absolute;
+    top: 160px;
+    
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{request.locale_name}}">
+    <head>
+        <meta charset="utf-8">
+        <link href="{{request.static_url('webnews:static/css/editSettings.css')}}" rel="stylesheet">
+        <link href="{{request.static_url('webnews:static/css/home.css')}}" rel="stylesheet">
+        <link href="{{request.static_url('webnews:static/css/normalize.css')}}" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="{{request.static_url('webnews:static/pyramid-16x16.png')}}">
+        <title>WebNews</title>
+    </head>
+    <body background="{{request.static_url('webnews:static/images/background_short.jpg')}}">
+        <header>
+            <div id="inner">
+                <div id="home">
+                    <a href="/"><img src="{{request.static_url('webnews:static/images/home_icon.png')}}"></a>
+                </div>
+                <div id="login">
+                    {% if username in users %}
+                        <a href="/edit/">{{username}}</a>
+                        <a style="float: right; margin-left: 20px;" href="/logout">Выйти</a>
+                    {%else%}
+                        <a style="float: right;" href="/login">Вход</a>
+                    {%endif%}
+                </div>
+            </div>
+        </header>
+        {% if username in publishers %}
+		<div id="formPlace">
+		    <form action="{{url}}" method="post">
+		        <input type="hidden" name="came_from" value="{{came_from}}">
+		        <div class="field">
+		            <label class="label">Заголовок: </label>
+			    <br/>
+                            <textarea class="inputText" name="topic" id="topicField" cols="43" rows="3"></textarea>
+		            
+		        </div>
+		        <div class="field">
+		            <label class="label">Краткое описание: </label>
+                            <textarea class="inputText" name="short_info" id="shField" cols="42" rows="3"></textarea>
+		        </div>
+		        <div class="field">
+		            <label class="label">Полное описание: </label>
+			    <textarea class="inputText" name="data" id="dataField"></textarea>
+		        </div>
+			<div class="field">
+		            <label class="label">Изображение: </label>
+		            <input type="file" name="img" value="Select" accept="image/*">
+		        </div>
+		        <div id="submit">
+		            <button type="submit" name="form.submitted" value="Add">Добавить</button>
+		        </div>
+		        <div> 
+		            <label>
+		                {{message}}
+		            </label>
+		        </div>
+		    </form>
+		</div>
+        {%else%}
+	    <div id="formPlace">
+		        <div class="field">
+		            <label class="label" for="login">NickName: </label>
+		        </div>
+		        <div class="field">
+		            <label class="label" for="password">Краткое описание: </label>
+		        </div>
+		        <div class="field">
+		            <label class="label" for="password">Полное описание: </label>
+		        </div>
+	    </div>
+        {%endif%}
+                <!--  <button type="submit" name="form.submitted" value="Log In" class="btn btn-default">Log In</button>-->
+
+
+
+        <footer style="position: absolute; width:100%; bottom:0; left:0;">
+            <p>© 2016 Сарафанов Дмитрий</p>
+        </footer>
+    </body>
+</html>

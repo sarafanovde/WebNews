@@ -1,5 +1,12 @@
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.schema import MetaData
+
+from zope.sqlalchemy import ZopeTransactionExtension
+
+from sqlalchemy import *
+from sqlalchemy.orm import *
+from sqlalchemy.ext.declarative import declarative_base, declared_attr
+from pyramid.threadlocal import *
+
 
 # Recommended naming convention used by Alembic, as various different database
 # providers will autogenerate vastly different names making migrations more
@@ -12,5 +19,7 @@ NAMING_CONVENTION = {
     "pk": "pk_%(table_name)s"
 }
 
-metadata = MetaData(naming_convention=NAMING_CONVENTION)
-Base = declarative_base(metadata=metadata)
+
+
+DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
+Base = declarative_base()

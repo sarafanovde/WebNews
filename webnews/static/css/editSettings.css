@@ -1,0 +1,64 @@
+body
+{
+    background-position: 0px 40px;
+}
+
+#formPlace
+{
+    background:#eee;
+    position: absolute;
+    top:40px;
+    width: 850px;
+    height: 320px;
+    left: 200px; 
+    border-radius: 5px;
+}
+
+.field
+{
+    position: relative;
+    padding: 10px;
+    display: :block;
+    width: 400px;
+    height: 100px;
+    float: left;
+    
+}
+.field input
+{
+    width: 400px
+}
+.field #topicField
+{
+    height: 50px;
+}
+.field #shField
+{
+    height: 50px;
+}
+.field #dataField
+{
+    height: 150px;
+    width: 400px
+}
+.field #imgload
+{
+    margin-top: 20px;
+}
+
+
+#submit
+{
+    position:absolute;
+    left: 270px;
+    margin-top:320px;        
+}
+#submit button
+{
+    width:300px;
+    height: 50px;
+    font: bold 20px/20px 'Arimo';
+    background: #1eace1;
+    border-radius: 10px;
+    color:#fff;
+}

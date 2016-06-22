@@ -1,0 +1,49 @@
+{% extends "home.jinja2" %}
+{% block page %}
+<div id="page">
+
+    <div class="bottom-header">
+        <a id="logo" href="/">
+            <img src="{{request.static_url('webnews:static/images/logo.png')}}"/>
+        </a>
+    </div>
+    
+    <div id="container">
+        <section id="content">
+            <div id="items_column">
+                <ul>
+    		    {% if news is iterable %}
+                    {% for item in news %}
+                    <li value="{{ item.id }}">
+                        <a name="item" href="/news/{{ item.id }}">
+			    <div class="topic">
+      			        {{item.Topic}}
+			    </div>
+    			    <div class="topic">
+		                    <span class="photo">
+		                        <img width="131" src="static/images/NewsPhotos/{{ item.image_name }}" alt="photo">
+		                    </span>
+				    <span class="short_info">{{item.ShortInfo}}</span>
+		                    <span class="short_info">Читать далее</span> 
+   			    </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                    {% else %}
+                    <li value="{{ news[0].id }}">
+                        <a name="item" href="/news/{{ news[0].id }}">
+                            <span class="photo">
+                                <img width="131" src="static/images/NewsPhotos/{{ news[0].image_name }}" alt="photo">
+                            </span>
+                            <span class="topic">{{news[0].Topic}}</span>
+                            <span class="short_info">{{news[0].ShortInfo}}</span>
+    			    <span class="next">Читать далее</span>  
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

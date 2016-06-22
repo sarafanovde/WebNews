@@ -1,0 +1,262 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    background-color: #A39185;
+    text-align:left;
+}
+header 
+{
+    border-top:1px solid #000;
+    position: fixed;
+    top:0;
+    left:0;
+    height:39px;
+    width:100%;
+    font: bold 11px;
+    color: #bababa;
+    text-transform: uppercase;
+    background: #000;
+    z-index:3;
+}
+div
+{
+    display: block;
+}
+a
+{
+    color:#0884bb;
+    text-decoration:underline;
+    outline:none!important;
+    cursor:pointer;
+    text-decoration: none;
+}
+li
+{
+    display: : list-item;
+    text-align: -webkit-match-parent;
+}
+
+header a
+{
+    color: #bababa;
+    text-decoration:none;
+}
+header div
+{
+    float:right;
+    margin-left:40px;
+    margin-top: 9px;   
+}
+header #inner
+{
+    width: 940px;
+    margin: 0 auto;
+    float:none;
+    padding-top: 0px;
+}
+header #home
+{
+    width: 25px;
+    height: 25px;
+    float:left;
+    margin-top:5px;
+}
+header #home a
+{
+    width:25px;
+    height:25px;
+}
+header img
+{
+    width:25px;
+    height:25px;
+}
+
+footer
+{
+    position: relative;
+    height: 50px;
+
+    padding: 0 0 0 10px;
+    margin:0px;
+    background: #303030;
+
+}
+footer p
+{
+    float:left;
+    width: 400px;
+    font: 14px/20px 'Arimo';
+    color: #fafafa;
+}
+
+
+
+#page
+{
+    position:relative;
+    width:940px;
+    margin:0 auto;
+    z-index:1;
+    padding-top:40px;
+    overflow: auto;
+}
+
+.bottom-header
+{
+    height:100px;
+    background:#fff;
+    position:relative;
+    z-index:3;
+}
+
+#logo
+{
+    position:absolute;
+    top:5px;
+    left:12px;
+}
+.bottom-header img
+{
+    height: 90px;
+    width: 170px;
+}
+
+
+form
+{
+    margin:0;
+    display:block;   
+    height: 43px;
+}
+
+
+
+.bottom-header form
+{
+    position:relative;
+    float: right;
+    right: 200px;
+    top: 30px;
+    height: 41px;
+    width:425px;
+    font: 14px/18px 'Arimo';
+    color: #555;
+    background: none;
+    border: 0;
+}
+.bottom-header form select
+{
+    width: 150px;
+    height: 40px;
+    font: normal 18px/20px 'Arimo';
+    text-transform: uppercase;    
+}
+.bottom-header form input
+{
+    width: 190px;
+    height: 40px;
+    font: normal 18px/20px 'Arimo';
+    text-transform: uppercase;     
+}
+
+
+
+#container
+{
+    width: 940px;
+
+}
+
+#left-menu
+{
+    position:relative;
+    width: 160px;
+    min-height: 200px;
+    float:left;
+    z-index: 2;
+    border: 2px solid #1eace1;
+}
+
+#content
+{
+    border: 2px solid #1eace1;
+    position:relative;
+    width: 936px;
+    min-height: 300px;
+    float:right;
+    background: #fff;
+    z-index: 1; 
+}
+
+#content #items_column
+{
+    display: block;
+    margin: 0;
+    padding: 0;    
+}
+
+#content #items_column ul
+{
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#content #items_column ul li
+{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#content #items_column ul li:nth-child(odd) a
+{
+    background: #d0d0d0
+}
+
+#content #items_column ul li a
+{
+    background: #fff;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 10px 20px 10px 20px;
+}
+#content #items_column ul li a .photo
+{
+    display: block;
+    float: left;
+    margin-right: 22px;
+}
+.photo img
+{
+    display: block;
+    height: 130px;
+    width: 130px;
+}
+#content #items_column ul li a .topic
+{
+    display: block;
+    float:left;
+    font-size:35px;
+    color: #000;
+    overflow: hidden;
+    width: 900px
+}
+
+#content #items_column ul li a .short_info
+{
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color:#1eace1;
+    margin-top:20px;
+}
+

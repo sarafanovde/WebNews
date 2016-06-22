@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{request.locale_name}}">
+    <head>
+        <meta charset="utf-8">
+        <link href="{{request.static_url('webnews:static/css/loginSettings.css')}}" rel="stylesheet">
+        <link href="{{request.static_url('webnews:static/css/home.css')}}" rel="stylesheet">
+        <link href="{{request.static_url('webnews:static/css/normalize.css')}}" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="{{request.static_url('webnews:static/pyramid-16x16.png')}}">
+        <title>WebNews</title>
+    </head>
+    <body background="{{request.static_url('webnews:static/images/background_short.jpg')}}">
+        <header>
+            <div id="inner">
+                <div id="home">
+                    <a href="/"><img src="{{request.static_url('webnews:static/images/home_icon.png')}}"></a>
+                </div>
+                <div id="login">
+                    {% if username=='admin' %}
+                        <label>{{username}}</label>
+                        <a style="float: right;" href="/logout">logout</a>
+                    {%else%}
+                        <a style="float: right;" href="/login">Вход</a>
+                    {%endif%}
+                </div>
+            </div>
+        </header>
+        <div id="formPlace">
+            <form action="{{url}}" method="post">
+                <input type="hidden" name="came_from" value="{{came_from}}">
+                <div class="field">
+                    <label class="label" for="login">Логин: </label>
+                    <input type="text" name="login" placeholder="login" class="inputText" id="loginField" value="{{login}}">
+                </div>
+                <div class="field">
+                    <label class="label" for="password">Пароль: </label>
+                    <input type="password" name="password" placeholder="password" class="inputText"  value="{{password}}">
+                </div>
+                <div id="submit">
+                    <button type="submit" name="form.submitted" value="Log in">Log in</button>
+                </div>
+                <div> 
+                    <label>
+                        {{message}}
+                    </label>
+                </div>
+            </form>
+        </div>
+
+
+                <!--  <button type="submit" name="form.submitted" value="Log In" class="btn btn-default">Log In</button>-->
+
+
+
+        <footer style="position: absolute; width:100%; bottom:0; left:0;">
+            <p>© 2016 Сарафанов Дмитрий</p>
+        </footer>
+    </body>
+</html>

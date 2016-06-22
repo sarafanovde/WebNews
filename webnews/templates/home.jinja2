@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="${request.locale_name}">
+    <head>
+        <meta charset="utf-8">
+    
+        <link href="{{request.static_url('webnews:static/css/home.css')}}" rel="stylesheet">
+        <link href="{{request.static_url('webnews:static/css/newsPage.css')}}" rel="stylesheet">
+        <link rel="shortcut icon" href="{{request.static_url('webnews:static/pyramid-16x16.png')}}">
+        <title>WebNews</title>
+    </head>
+
+    <body background="{{request.static_url('webnews:static/images/background.png')}}">
+        <header>
+            <div id="inner">
+                <div id="home">
+                    <a href="/"><img src="{{request.static_url('webnews:static/images/home_icon.png')}}"></a>
+		    <span>WebNews</span>
+                </div>
+                <div id="login">
+                    {% if username in users %}
+                        <a href="/edit/">{{username}}</a>
+                        <a style="float: right; margin-left: 20px;" href="/logout">Выйти</a>
+                    {%else%}
+                        <a style="float: right;" href="/login">Вход</a>
+                    {%endif%}
+                </div>
+            </div>
+        </header>
+        
+        {% block page %}{% endblock %}
+        
+        <footer>
+            <p>© 2016 Сарафанов Дмитрий</p>
+        </footer>    
+
+    </body>
+    
+</html>

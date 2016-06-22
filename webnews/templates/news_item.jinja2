@@ -1,0 +1,23 @@
+{% extends "home.jinja2" %}
+{% block page %}
+<div id=page>
+    <section id="content" style="background: #eee">
+        <div id="news_item_page">
+            <div class="image">
+                <img src="/static/images/NewsPhotos/{{ news_item.image_name }}">
+            </div>
+            <div class="info">
+                <div class="row">
+                    <div class="topic">
+                        <span> {{ news_item.Topic }} </span>
+                    </div>
+                </div> 
+            </div>              
+            <div class="data">
+                 <span> {{ news_item.Data }} </span>
+            </div>
+
+        </div>
+    </section>
+</div>
+{% endblock %}
