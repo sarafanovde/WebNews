@@ -24,7 +24,12 @@ from pyramid_sacrud.interfaces import ISacrudResource
 from pyramid.security import (
     Allow,
     Everyone)
+from sqlalchemy import ForeignKey
 
+class Category(Base):
+    __tablename__ = 'categories'
+    id = Column(Integer, primary_key=True)
+    Name = Column(Text)
 
 class User(Base):
     __tablename__ = 'users'
@@ -41,7 +46,8 @@ class News(Base):
     ShortInfo = Column(Text)
     Data = Column(Text)
     image_name = Column(Text)
-	
+    UserId = Column(Integer, ForeignKey("users.id"))
+    #CategoryId = Column(Text, ForeignKey("categories.id"))	
 
 class Accesses(object):
     __acl__ = [ (Allow, 'group:editors', ('pyramid_sacrud_home', 'pyramid_sacrud_create', 'pyramid_sacrud_update', 'pyramid_sacrud_delete', 'pyramid_sacrud_list')),

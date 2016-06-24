@@ -90,10 +90,14 @@ def news_view(request):
     news_id = request.matchdict['id']
     news_item = DBSession.query(News).filter_by(id=news_id).first()
     users = DBSession.query(User).all()
+    userId = news_item.UserId
+    publisher = DBSession.query(User).filter_by(id=userId).first()
     users = map(lambda x:x.Name, users)
+            
     return {'news_item': news_item,
             'username': request.authenticated_userid,
             'users': users,
+            'publisher': publisher,
             'project': 'WebNews'
     }
 
@@ -103,6 +107,7 @@ def news_edit(request):
     users = map(lambda x:x.Name, users)
     publishers = ['admin','root']
     if 'form.submitted' in request.params:
+        publisher = DBSession.query(User).filter_by(Name=request.authenticated_userid).first()
         try:
             img = request.POST['img']
             readFile(img)
@@ -112,7 +117,7 @@ def news_edit(request):
         topic = request.params['topic']
         short_info = request.params['short_info']
         data = request.params['data']
-        news = News(Topic=topic, ShortInfo = short_info, Data = data, image_name = name)
+        news = News(Topic=topic, ShortInfo = short_info, Data = data, image_name = name, UserId = publisher.id)
         DBSession.add(news)
 
     return {
